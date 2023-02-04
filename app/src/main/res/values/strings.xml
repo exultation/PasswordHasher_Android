@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Passwort Generator.#</string>
+    <string name="speakMasterMassword">Master Password</string>
+    <string name="hintMasterPassword">Master password</string>
+    <string name="longDescription">Auf Basis deines Master Passwort und einem Schlüsselwort (Merktext) wird ein sicheres Passwort generiert. Verwende ein mögliches langes Master Passwort. Dieses Master Passwort wird zur Generierung aller sicheren Passworte verwendet. Nach dem Du das Passwort kopiert hast wird es automatisch in die Liste der verwendetet Schlüsselworte aufgenommen. Um ein vorher generiertes Passwort wieder zu verwenden, tippe im Feld Schlüsselwort die ersten Buchstaben des Schlüsselwort  oder wähle es aus der Liste der kopierten Passworte aus.</string>
+    <string name="passewordLength">Passwortlänge (in Zeichen)</string>
+    <string name="Zeichen_8">8</string>
+    <string name="Zeichen_12">12</string>
+    <string name="Zeichen_16">16</string>
+    <string name="Zeichen_20">20</string>
+    <string name="keyword">"Schlüsselwort für dein Passwort z.B. Xing"</string>
+    <string name="passwort">sicheres Passwort</string>
+
+</resources>

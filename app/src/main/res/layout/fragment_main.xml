@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="viewModel"
+            type="de.exultation.passwortgenerator.ui.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgHelp"
+            android:layout_width="@dimen/symbols"
+            android:layout_height="@dimen/symbols"
+            android:layout_marginStart="8dp"
+            android:clickable="true"
+            android:src="@drawable/contact_support_48px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <ImageView
+            android:id="@+id/imgSettings"
+            android:layout_width="@dimen/symbols"
+            android:layout_height="@dimen/symbols"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/settings_48px"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Theme.PasswortGenerator.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/horMarginMid"
+            android:layout_marginTop="@dimen/vertMarginMid"
+            android:layout_marginEnd="@dimen/horMarginMid"
+            android:layout_marginBottom="@dimen/vertMarginMid"
+            app:endIconMode="password_toggle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgSettings"
+            app:layout_constraintStart_toEndOf="@+id/imgHelp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/Theme.PasswortGenerator.EditText"
+                android:id="@+id/txtMasterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hintMasterPassword"
+                android:inputType="textPassword"
+                android:text="@={viewModel.key}">
+
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/editTextTextPersonName"
+            style="@style/Theme.PasswortGenerator.SmallText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/horMarginLarge"
+            android:layout_marginTop="@dimen/vertMarginMid"
+            android:layout_marginEnd="@dimen/horMarginLarge"
+            android:ems="8"
+            android:text="@string/longDescription"
+            android:textSize="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <TextView
+        android:id="@+id/txtPasswortLen"
+        style="@style/Theme.PasswortGenerator.TextFieldHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertMarginLarge"
+        android:text="@string/passewordLength"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggelPasswortLen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertMarginMid"
+        android:gravity="fill_horizontal|center_horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:selectionRequired="true"
+        app:checkedButton="@id/passwortLen8"
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswortLen"
+        app:singleSelection="true"
+        >
+        <Button
+            android:id="@+id/passwortLen8"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/Zeichen_8" />
+
+        <Button
+            android:id="@+id/passwortLen12"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/Zeichen_12" />
+
+        <Button
+            android:id="@+id/passwortLen16"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/Zeichen_16" />
+        <Button
+            android:id="@+id/passwortLen20"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="fill_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/Zeichen_20" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textKeyTextLayout"
+        style="@style/Theme.PasswortGenerator.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertMarginLarge"
+        android:layout_marginEnd="@dimen/horMarginMid"
+        android:hint="@string/keyword"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/toggelPasswortLen"
+        app:layout_constraintTop_toBottomOf="@+id/toggelPasswortLen">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtAlias"
+            style="@style/Theme.PasswortGenerator.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.alias}"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtPasswordTextLayout"
+        style="@style/Theme.PasswortGenerator.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertMarginLarge"
+        android:layout_marginEnd="@dimen/horMarginMid"
+        android:hint="@string/passwort"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/toggelPasswortLen"
+        app:layout_constraintTop_toBottomOf="@+id/textKeyTextLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtPassword"
+            style="@style/Theme.PasswortGenerator.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+
+            android:focusable="false"
+             />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/file_copy_48px"
+        app:layout_constraintBottom_toBottomOf="@+id/txtPasswordTextLayout"
+        app:layout_constraintEnd_toEndOf="@+id/toggelPasswortLen"
+        app:layout_constraintTop_toTopOf="@+id/txtPasswordTextLayout" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/list_alt_48px"
+        app:layout_constraintBottom_toBottomOf="@+id/textKeyTextLayout"
+        app:layout_constraintEnd_toEndOf="@+id/toggelPasswortLen"
+        app:layout_constraintTop_toTopOf="@+id/textKeyTextLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

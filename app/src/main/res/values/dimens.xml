@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="symbols">48dp</dimen>
+    <dimen name="vertMarginMid">8dp</dimen>
+    <dimen name="horMarginMid">8dp</dimen>
+    <dimen name="horMarginLarge">14dp</dimen>
+    <dimen name="vertMarginLarge">14dp</dimen>
+
+</resources>
