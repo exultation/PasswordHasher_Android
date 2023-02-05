@@ -167,8 +167,9 @@
         app:layout_constraintStart_toStartOf="@+id/toggelPasswortLen"
         app:layout_constraintTop_toBottomOf="@+id/toggelPasswortLen">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <AutoCompleteTextView
             android:id="@+id/txtAlias"
+            android:paddingStart="16dp"
             style="@style/Theme.PasswortGenerator.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -222,5 +223,15 @@
         app:layout_constraintEnd_toEndOf="@+id/toggelPasswortLen"
         app:layout_constraintTop_toTopOf="@+id/textKeyTextLayout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/vertMarginLarge"
+            android:layout_marginBottom="@dimen/vertMarginLarge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imgShowPWList"
+            app:layout_constraintStart_toStartOf="@+id/toggelPasswortLen"
+            app:layout_constraintTop_toBottomOf="@+id/txtPasswordTextLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

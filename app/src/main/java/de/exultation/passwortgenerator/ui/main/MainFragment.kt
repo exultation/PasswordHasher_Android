@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -31,6 +32,7 @@ class MainFragment : Fragment()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
+
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
     }
@@ -42,6 +44,10 @@ class MainFragment : Fragment()
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         setupListeners()
+
+        val items = listOf("Material", "Design", "Components", "Android")
+        val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
+        //binding.txtAlias.setAdapter(adapter)
         return binding.root//inflater.inflate(R.layout.fragment_main, container, false)
     }
 
