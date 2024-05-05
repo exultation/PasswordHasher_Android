@@ -10,5 +10,7 @@
     <string name="Zeichen_20">20</string>
     <string name="keyword">"Schlüsselwort für dein Passwort z.B. Xing"</string>
     <string name="passwort">sicheres Passwort</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
